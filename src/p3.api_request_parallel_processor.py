@@ -389,12 +389,12 @@ if __name__ == "__main__":
 
     # parse command line arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("--requests_filepath")
-    parser.add_argument("--save_filepath", default=None)
+    parser.add_argument("--requests_filepath", default="data_sample/d2.embeddings_maker.jsonl")
+    parser.add_argument("--save_filepath", default="data_sample/d3.embeddings_maker_results.jsonl")
     parser.add_argument("--request_url", default="https://api.openai.com/v1/embeddings")
     parser.add_argument("--api_key", default=os.environ.get("OPENAI_API_KEY"))
     parser.add_argument("--max_requests_per_minute", type=int, default=3_000 * 0.5)
-    parser.add_argument("--max_tokens_per_minute", type=int, default=250_000 * 0.5)
+    parser.add_argument("--max_tokens_per_minute", type=int, default=250_000 * 2.5)
     parser.add_argument("--token_encoding_name", default="cl100k_base")
     parser.add_argument("--max_attempts", type=int, default=5)
     parser.add_argument("--logging_level", default=logging.INFO)
